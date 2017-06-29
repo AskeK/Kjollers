@@ -1,0 +1,158 @@
+
+
+.circlesections-container{
+    @media screen and ( min-width: $mbp-2 ) {
+        .style-bar{
+            display: none!important;
+        }
+    }
+}
+
+.circlesections {
+    position: relative;
+    width: 100vw;
+    height: 440px;
+
+    @media screen and ( max-width: $mbp-2 ) {
+        height: 310px;
+    }
+
+    .circlesections-inner{
+        position: absolute;
+        width: 100%;
+        max-width: 320px * 3;
+        height: auto;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        font-size: 0;
+        display: flex;
+
+        @media screen and ( max-width: 910px ) {
+
+            max-width: none!important;
+            top: 0; left: 0;
+            transform: none;
+            height: calc( 100% );
+            display: block;
+
+        }
+
+        @media screen and ( max-width: 720px ) {
+
+            top: 12px; left: 0;
+            height: calc( 100% - 12px );
+
+        }
+
+        .circlesection{
+            position: relative;
+            display: inline-block;
+            margin: 0px auto;
+            width: calc( 100% / 3 );
+            text-align: center;
+            font-size: 16px;
+            padding: 0 32px;
+            vertical-align: top;
+            overflow: hidden;
+
+            @media screen and ( max-width: $mbp-2 ) {
+                width: 100vw;
+                padding: 0;
+                height: 100%!important;
+
+                .cursor{
+                    top: 90px!important;
+                }
+
+                .image{
+                    width: 100%!important;
+                    border-radius: 0!important;
+                    height: 100%!important;
+                    margin: 0!important;
+                }
+
+                .title{
+                    position: absolute!important;
+                    top: 98px!important; left: 50%!important;
+                    transform: translateX(-50%)!important;
+                    color: white!important;
+                }
+
+                .text{
+                    position: absolute!important;
+                    top: 158px!important; left: 50%!important;
+                    transform: translateX(-50%)!important;
+                    color: white!important;
+                    width: 250px!important;
+                }
+            }
+
+            .image{
+                position: relative;
+                margin: 0 auto;
+                width: 200px;
+                height: 200px;
+                border-radius: 120px;
+                background-size: cover;
+                background-position: center;
+                box-shadow: 0px 2px 1px rgba(0,0,0,.1);
+                overflow: hidden;
+                cursor: pointer;
+                transition: $bezier;
+
+                &:hover{
+                    box-shadow: 0px 3px 1px rgba(0,0,0,.1);
+
+                    .cursor{
+                        transform: rotate(-5deg) translate(-50%, -50%);
+
+                        svg{
+                            width: 54px;
+                            height: 54px;
+                        }
+                    }
+                }
+
+                .overlay{
+                    position: absolute;
+                    top: 0; left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-color: rgba( $mc-blue-500, .78 );
+                }
+            }
+
+            .title{
+                margin-top: 30px;
+                font-size: 20px;
+                color: darken( $mc-blue-400, 6% );
+                width: 260px;
+                font-family: $alternative-font-stack;
+                font-weight: 500;
+                text-transform: uppercase;
+            }
+
+            .cursor{
+                position: absolute;
+                top: 50%; left: 50%;
+                transform: translate(-50%,-50%);
+                transition: $bezier;
+                transform-origin: center;
+
+                svg{
+                    transition: $bezier;
+                    width: 48px; height: 48px;
+                    fill: white;
+                }
+            }
+
+            .text{
+                padding: 10px 10px 16px 10px;
+                font-size: 15px;
+                color: $mc-blue-400;
+                font-weight: 100;
+            }
+        }
+    }
+}

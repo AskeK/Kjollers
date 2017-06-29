@@ -1,0 +1,38 @@
+
+body{
+    background-color: #292929;
+}
+
+.p404 {
+    position: absolute;
+    top: 48%; left: 50%;
+    transform: translate( -50%, -50% );
+    width: auto; height: auto;
+    text-align: center;
+}
+
+.p404 .title{
+    font-family: 'Montserrat';
+    font-size: 28px;
+    color: #eaeaea;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-bottom: 22px;
+    width: 620px;
+}
+
+.p404 .divider{
+    margin: 0 auto 22px auto;
+    width: 270px; height: 1px;
+    background-color: #fff;
+}
+
+.p404 .return{
+    display: block;
+    font-size: 16px;
+    font-family: 'Crimson Text';
+    color: #fff;
+    font-weight: 100;
+    font-style: italic;
+    text-decoration: none;
+}

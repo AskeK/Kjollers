@@ -1,0 +1,114 @@
+
+//$bezier: 400ms cubic-bezier(.7, 0, .3, 1);
+$halftime-bezier: $bezier; // Testing
+
+@media screen and ( min-width: 720px ) {
+     .container{
+        padding-top: 0px!important;
+     }
+
+     header.topbar{
+         top: -$top-bar-height!important;
+     }
+}
+
+header.topbar{
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: auto;
+    background-color: darken( $mc-blue-400, 3% );
+    transition: $bezier;
+    min-height: $top-bar-height;
+    z-index: 100;
+    box-shadow: 0px 2px 1px rgba(0,0,0,.1);
+    background-image: url(http://kjollers-koreskole.dk/customerdata/files/templates/1/shattered.png);
+    *{ z-index: inherit; }
+
+    .hamburger-container {
+        position: absolute;
+        left: 14px; top: 18px;
+        transition: $halftime-bezier;
+        width: auto; height: auto;
+        z-index: 1000;
+    }
+
+    .close-icon {
+        position: absolute;
+        left: -32px; top: -2px;
+        transition: $halftime-bezier;
+        font-size: 40px;
+        margin: 0;
+        color: white;
+        font-weight: 100;
+        opacity: 0;
+        z-index: 1000;
+        cursor: pointer;
+
+        * {
+            margin: inherit;
+        }
+    }
+
+    .navigation{
+        position: fixed;
+        top: $top-bar-height; left: -230px;
+        width: 230px; height: calc( 100vh - #{$top-bar-height} );
+        transition: 220ms cubic-bezier(.7, 0, .3, 1);
+        background-color: darken( $mc-blue-400, 20% );
+        background-image: url(http://kjollers-koreskole.dk/customerdata/files/templates/1/shattered.png);
+        box-shadow: 1px 0px 2px rgba(0,0,0,.1);
+
+        .nav-inner{
+            padding-top: 30px;
+        }
+
+        .navelem{
+            position: relative;
+            font-size: 11px;
+            color: white;
+            text-decoration: none;
+            display: block;
+            text-transform: uppercase;
+            margin: 0;
+            cursor: pointer;
+            line-height: 20px;
+            padding: 8px 0px 8px 26px;
+            overflow: hidden;
+            font-weight: 800;
+
+            &:before{
+                content: '';
+                position: absolute;
+                left: -5px; top: 0;
+                width: 5px; height: 100%;
+                background-color: #fff;
+                transition: 80ms cubic-bezier(.6, 0, .4, 1);
+                border-radius: 0px 2px 2px 0px;
+            }
+
+            &:hover{
+                &:before{
+                    left: 0px;
+                }
+            }
+        }
+    }
+
+    .notification{
+        position: absolute;
+        right: 16px;
+        top: 10px;
+        transition: 400ms cubic-bezier(0.7, 0, 0.3, 1);
+        font-weight: 500;
+
+        .btn{
+            background-color: $mc-red-500;
+            padding: 8px 10px;
+            color: white;
+            box-shadow: 0px 1px 1px rgba(0,0,0,.2);
+            font-size: 10px;
+            display: block;
+            text-decoration: none;
+        }
+    }
+}

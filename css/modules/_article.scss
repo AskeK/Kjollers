@@ -1,0 +1,52 @@
+
+
+.article{
+    width: 100%; height: auto;
+    padding: 32px 0;
+    background-color: rgba(255,255,255,.65);
+
+    .article-inner{
+        width: 100%;
+        max-width: 862px;
+        padding: 0 16px;
+        margin: 0 auto;
+        color: darken( $mc-blue-400, 3% );
+        font-size: 14px;
+        line-height: 1.5;
+        font-family: 'Montserrat';
+        font-weight: 100;
+
+        p {
+            padding: 0 16px;
+
+            @media screen and ( max-width: 720px ) {
+                padding: 0!important;
+            }
+        }
+
+        h1, h2 { text-transform: uppercase; }
+
+        h1{
+            position: relative;
+            font-size: 24px;
+            color: darken( $mc-blue-400, 8% );
+        }
+
+        h2{
+            font-size: 22px;
+            color: darken( $mc-blue-400, 5% );
+            font-weight: 100;
+        }
+
+        a{
+            color: #666;
+            text-decoration: none;
+            font-weight: 500;
+            transition: 120ms cubic-bezier(.72, 0, .28, 1);
+
+            &:hover{
+                color: #222;
+            }
+        }
+    }
+}

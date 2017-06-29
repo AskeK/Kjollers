@@ -1,0 +1,195 @@
+footer.footer{
+    position: relative;
+    width: 100vw; height: auto;
+    background-image: url(http://kjollers-koreskole.dk/customerdata/files/templates/1/shattered.png);
+    background-color: darken( $mc-blue-400, 2% );
+
+    .signup-container{
+        position: relative;
+        width: 100vw; height: 160px;
+
+        @media screen and ( max-width: $mbp-2 ) {
+            display: none;
+        }
+
+        .signup{
+            position: absolute;
+            width: 100%;
+            height: auto;
+            max-width: 862px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 32px;
+
+            .icon{
+                display: inline-block;
+                background-size: contain;
+                background-position: center;
+                background-repeat: no-repeat;
+                margin-right: 28px;
+                display: inline-block;
+                vertical-align: top;
+
+
+                svg{
+                    width: 88px; height: 88px;
+                    fill: white;
+                    vertical-align: top;
+                }
+            }
+
+            .info-container{
+                display: inline-block;
+                height: 88px;
+                width: auto;
+                max-width: 480px;
+                vertical-align: top;
+                margin-top: 3px;
+
+                .title{
+                    font-size: 24px;
+                    color: white;
+                    margin-bottom: 7px;
+                    text-transform: uppercase;
+                }
+
+                .text{
+                    color: #ccc;
+                }
+
+                .btn{
+                    position: absolute;
+                    top: 50%; right: 18px;
+                    padding: 20px 26px;
+                    background-color: #600A21;
+                    box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.1);
+                    color: white;
+                    text-transform: uppercase;
+                    font-size: 13px;
+                    font-family: 'Montserrat';
+                    transform: translateY(-50%);
+                }
+            }
+        }
+    }
+
+    .info{
+        position: relative;
+        width: 100%;
+        height: 140px;
+        background-color: lighten( $mc-blue-400, 5% );
+        padding: 32px;
+        background-color: #86b5b4;
+        background-image: url(http://kjollers-koreskole.dk/customerdata/files/templates/1/cream-pixels.png);
+
+        @media screen and ( max-width : 690px ) {
+            height: 230px;
+            .content{ line-height: 1.7!important; }
+            .info-elem{
+                padding-left: 32px!important;
+                width: auto!important;
+            }
+        }
+
+        .info-inner{
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%,-50%);
+            width: 100%; height: auto;
+            max-width: 830px;
+            padding: 0 16px;
+            font-size: 0;
+
+            .info-elem{
+                width: calc( 100% / 3 );
+                font-size: 16px;
+                display: inline-block;
+                vertical-align: top;
+
+                .content{
+                    text-transform: uppercase;
+                    font-size: 12px;
+                    line-height: 1.5;
+                    font-family: 'Montserrat';
+                    font-weight: 100;
+                    margin-top: 8px;
+
+                    a{
+                        font-weight: 500;
+                        text-decoration: none;
+                        color: #393939;
+                        transition: $bezier;
+                        padding-left: 8px;
+
+                        &:hover{
+                            color: #222;
+                        }
+                    }
+                }
+
+                &.contact{
+                    svg{
+                        width: 18px;
+                        height: 18px;
+                    }
+                }
+
+                &.adress a{
+                    padding-left: 0;
+                }
+
+                .title{
+                     color: white;
+                    font-size: 16px;
+                    vertical-align: top;
+                    margin-left: 16px;
+                    text-transform: uppercase;
+                    line-height: 26px;
+                    vertical-align: top;
+                    display: inline-block;
+                }
+
+                .icon{ display: inline-block; }
+                svg{
+                    fill: white;
+                    width: 24px;
+                    height: 24px;
+                }
+            }
+        }
+    }
+
+    .signature{
+        background-color: #292929;
+        width: 100%;
+        height: 42px;
+        line-height: 42px;
+        display: block;
+
+        &:hover .text{
+            border-bottom: 1px solid #699;
+        }
+
+        .signature-inner{
+            width: 100%;
+            height: 100%;
+            max-width: 878px;
+            padding-left: 48px;
+            color: white;
+            margin: 0 auto;
+            font-size: 10px;
+            color: #699;
+            *{ vertical-align: top; }
+
+            svg{
+                margin-right: 16px;
+                width: 19px;
+                height: 19px;
+                display: inline-block;
+                fill: #699;
+                margin-top: 11px;
+            }
+        }
+    }
+}

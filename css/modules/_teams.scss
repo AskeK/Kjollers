@@ -1,0 +1,157 @@
+
+.teams{
+    width: 100%;
+    height: auto;
+    padding: 32px 0;
+
+    @media screen and ( max-width: 660px ) {
+        padding: 0;
+    }
+
+    .teams-inner{
+        position: relative;
+        width: 100%;
+        height: auto;
+        max-width: 862px;
+        margin: 0 auto;
+        font-size: 0;
+
+        @media screen and ( max-width: 660px ) {
+            .nextteam{
+                position: relative!important;
+                display: block!important;
+                width: calc( 100% - 32px )!important;
+                margin: 16px!important;
+                height: 300px!important;
+            }
+
+            .upcomingteams{
+                position: relative!important;
+                display: block!important;
+                width: calc( 100% - 32px )!important;
+                margin: 16px!important;
+            }
+        }
+
+        .nextteam{
+            position: absolute;
+            left: 0; top: 0;
+            font-size: 16px;
+            display: inline-block;
+            vertical-align: top;
+            margin: 0px 24px 0 24px;
+            padding: 20px 20px;
+            background-color: #fff;
+            box-shadow: 0px 2px 1px rgba(0,0,0,.1);
+            line-height: 1.5;
+            color: #2f5364;
+            width: calc( 50% - 32px );
+            height: 100%;
+
+            .nextteam-inner{
+                position: absolute;
+                top: 50%; left: 50%;
+                transform: translate(-50%,-50%);
+            }
+
+            .title{
+                text-align: center;
+                text-transform: uppercase;
+                font-size: 20px;
+                margin: 0 auto 24px auto;
+                width: 200px;
+            }
+
+            .time{
+                text-align: center;
+                font-weight: 100;
+                font-size: 16px;
+            }
+
+            .price{
+                text-align: center;
+                font-weight: 100;
+            }
+
+            .btn{
+                background-color: #600A21;
+                color: white;
+                padding: 16px 20px;
+                width: 200px;
+                text-align: center;
+                margin: 32px auto 0 auto;
+                text-align: center;
+                text-transform: uppercase;
+                font-family: 'Montserrat';
+                box-shadow: 0px 2px 1px rgba(0,0,0,.1);
+                display: block;
+            }
+        }
+
+        .upcomingteams{
+            font-size: 16px;
+            display: inline-block;
+            vertical-align: top;
+            margin: 0px 8px 0 24px;
+            line-height: 1.5;
+            color: #2f5364;
+            width: calc( 50% - 32px );
+            margin-left: calc( 50% + 10px );
+
+            .space{
+                width: 100%;
+                height: 16px;
+            }
+
+            .upcomingteam{
+                width: 100%;
+                height: 100px;
+                background-color: white;
+                box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.1);
+                padding: 16px;
+
+                .empty{
+                    height: 18px;
+                    background-color: rgba(0,0,0,.06);
+                }
+
+                .type.empty{
+                    width: 40%;
+                    margin-bottom: 8px;
+                }
+
+                .time.empty{
+                    width: 20%;
+                    margin-bottom: 8px;
+                }
+
+                .price.empty{
+                    width: 30%;
+                }
+
+                .type{
+                    text-transform: uppercase;
+                    font-size: 16px;
+                    margin: 0 0 6px 0;
+                }
+
+                .time, .price{
+                    font-size: 12px;
+                    font-family: 'Montserrat';
+                    font-weight: 100;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,26 @@
+.hamburger{
+    position: relative;
+    width: 18px; height: 14px;
+    cursor: pointer;
+
+    .hmline{
+        position: absolute;
+        width: 100%; height: 3px;
+        left: 0;
+        border-radius: 3px;
+        background-color: white;
+
+        &.hmline1{
+            top: 0;
+        }
+
+        &.hmline2{
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        &.hmline3{
+            bottom: 0;
+        }
+    }
+}

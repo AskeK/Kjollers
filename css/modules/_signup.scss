@@ -1,0 +1,348 @@
+.signup-fields{
+    position: relative;
+    width: 100%; height: auto;
+    margin-bottom: 42px;
+
+    .sent{
+        display: none;
+        width: 100%;
+        text-align: center;
+        font-size: 22px;
+        margin-top: 18px;
+        text-transform: uppercase;
+        color: darken( $mc-blue-400, 5% );
+
+        .onemoretime{
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 8px;
+            color: lighten( $mc-red-500, 5% );
+        }
+    }
+
+    &.processed{
+        .send{
+            padding-left: 160px;
+            box-shadow: 0px 3px 2px rgba(0,0,0,.15);
+
+            &:after{
+                left: 50%!important;
+                transform: translate( -50%, -50% )!important;
+            }
+
+            &:before{
+                left: 100%!important;
+                transform: translate( 0, -50% )!important;
+            }
+        }
+    }
+
+    &.done{
+
+        .sub-inner{
+            display: none;
+        }
+
+        .sent{
+            display: block;
+        }
+
+    }
+
+    &.loading{
+        pointer-events: none;
+
+        .send{
+            box-shadow: 0px 3px 2px rgba(0,0,0,.15);
+            padding-left: 160px;
+
+            &:before{
+                left: 50%!important;
+                transform: translate(-50%,-50%)!important;
+            }
+        }
+    }
+
+    .main-title{
+        font-size: 20px;
+        color: darken( $mc-blue-400, 0% );
+        width: 100%;
+        text-align: center;
+        text-transform: uppercase;
+        margin: 24px 0 12px 0;
+        font-family: 'Montserrat';
+
+        @media screen and ( max-width: 720px ) {
+            margin: 0 0 32px 0;
+        }
+    }
+
+    .style-bar{
+        display: none;
+
+        @media screen and ( max-width: 720px ) {
+            display: block;
+        }
+    }
+
+    .signup-inner{
+        position: relative;
+        width: 100%; height: auto;
+        max-width: 830px;
+        margin: 0 auto;
+        margin-bottom: 32px;
+        background-color: white;
+        box-shadow: 0px 2px 1px rgba(0,0,0,.1);
+
+        .send{
+            position: absolute;
+            right: 31px; bottom: 16px;
+            height: 36px;
+            width: 160px;
+            text-align: center;
+            line-height: 36px;
+            font-size: 12px;
+            color: white;
+            fill: white;
+            background-color: $mc-red-500;
+            box-shadow: 0px 2px 1px rgba(0,0,0,.1);
+            text-transform: uppercase;
+            cursor: pointer;
+            overflow: hidden;
+            transition: 300ms cubic-bezier(.7, 0, .3, 1);
+
+            &:before{ content: 'Sender...'; }
+            &:after{ content: 'Sendt'; }
+            &:before, &:after{
+                position: absolute;
+                left: 0; top: 50%;
+                transform: translate(-100%, -50%);
+                transition: 300ms cubic-bezier(.7, 0, .3, 1);
+            }
+
+            svg{
+                width: 11px;
+                margin-left: 10px;
+            }
+        }
+
+        .fields{
+            margin-top: 16px;
+            width: calc( 50% - 8px );
+            height: auto;
+            padding: 24px 24px 8px 34px;
+            // background-color: #fff;
+            // box-shadow: 0px 2px 1px rgba(0,0,0,.1);
+
+            @media screen and ( max-width: 720px ) {
+                position: relative!important;
+                width: 100%!important;
+                margin-top: 0!important;
+            }
+
+            &.fields-right{
+                position: absolute;
+                right: 0; top: 0;
+                height: 100%;
+                margin-top: 0;
+                padding-top: 8px;
+            }
+
+            &.fields-bottom{
+                width: 100%;
+                height: auto;
+                margin: 0;
+                padding-top: 0;
+                padding-bottom: 52px;
+
+                @media screen and ( max-width: 720px ) {
+                    padding-bottom: 66px;
+                }
+
+                .text{
+                    width: 100%;
+                    text-align: center;
+                }
+            }
+
+            .title{
+                font-size: 20px;
+                font-weight: 100;
+                margin-top: 16px;
+                margin-bottom: 16px;
+            }
+
+            & > .field{
+                padding: 16px 0 16px 0px;
+                font-weight: 100;
+                font-size: 12px;
+                text-transform: uppercase;
+                color: darken( $mc-blue-400, 10% );
+                position: relative;
+                transition: 300ms cubic-bezier(.7, 0, .3, 1);
+
+                &#cats.wrong:before{
+                    content: '\00d7';
+                    position: absolute;
+                    left: 86px;
+                    top: 31px;
+                    transform: translateY(-50%);
+                    color: #600A21;
+                    font-size: 24px;
+                    font-weight: 100;
+                    text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
+                }
+
+                &#signup-teams{
+                    overflow: hidden;
+                    height: 162px;
+                    transition: 300ms cubic-bezier( .7, 0, .3, 1 );
+
+                    &.notactive{
+                        height: 0;
+                        padding: 0;
+                    }
+                }
+
+                &.active{
+                    .text{
+                        top: 8px;
+                        font-size: 10px;
+                    }
+                }
+
+                & > .text{
+                    position: absolute;
+                    font-weight: 900;
+                    pointer-events: none;
+                    top: 26px;
+                    transition: 180ms cubic-bezier(.7, 0, .3, 1);
+                }
+
+                & > input{
+                    border: none;
+                    outline: none;
+                    width: calc( 100% - 18px );
+                    border-bottom: 2px solid $mc-blue-400;
+                    height: 32px;
+                    font-size: 14px;
+
+                    &.wrong ~ .declined {
+                        display: block;
+                    }
+                }
+
+                .declined{
+                    display: none;
+                    position: absolute;
+                    right: -20px;
+                    top: 67%;
+                    transform: translateY(-50%);
+                    color: #600A21;
+                    font-size: 24px;
+                    font-weight: 100;
+                    text-shadow: 0px 1px 1px rgba(0,0,0,.1);
+                }
+
+            }
+        }
+    }
+}
+
+.selector-container{
+    width: auto; height: auto;
+    margin-top: 48px;
+
+    .field{
+        position: relative;
+        width: 56px;
+        height: 24px;
+        margin-bottom: 24px;
+        cursor: pointer;
+
+        .text{
+            margin-left: 65px;
+            width: 200px;
+            line-height: 24px;
+        }
+
+        label{
+            content: '';
+            position: absolute;
+            width: 56px; height: 24px;
+            border-radius: 24px;
+            background-color: white;
+            opacity: 1;
+            border: 2px solid #366;
+            cursor: pointer;
+            box-shadow: 0px 1px 1px rgba(0,0,0,.2);
+
+            &:after{
+                content: '';
+                position: absolute;
+                top: 2px; left: 2px;
+                height: 14px; width: 14px;
+                border-radius: 20px;
+                border: 1px solid #366;
+                transition: 200ms cubic-bezier(.72, 0, .28, 1);
+            }
+        }
+
+        input{
+            display: none;
+        }
+
+        input:checked ~ label:after{
+            left: 34px;
+            background-color: #366;
+        }
+    }
+}
+
+.upcomingteams.select{
+    width: 100%; height: auto;
+    display: flex; flex-wrap: nowrap;
+
+    .upcomingteam-container.select{
+        width: calc( 100% / 3 - 16px );
+        height: auto;
+        font-size: 0;
+        display: inline-block;
+        margin: 0 8px;
+        flex-grow: 1;
+    }
+
+    label{
+        font-size: 10px;
+        width: 100%;
+        border: 2px solid rgba($mc-blue-400, .3);
+        position: relative;
+        padding: 16px 24px;
+        box-shadow: 0px 2px 1px rgba(0,0,0,.05);
+        display: block;
+        transition: 200ms cubic-bezier(.72, 0, .28, 1);
+        cursor: pointer;
+        font-family: 'Montserrat';
+        font-weight: 100;
+
+        &:hover{
+            border: 2px solid rgba($mc-blue-400, .6);
+        }
+
+        .type{
+            margin-bottom: 8px;
+            font-weight: 900;
+            font-size: 12px;
+        }
+    }
+
+    input{
+        display: none;
+    }
+
+    input:checked ~ label{
+        border: 2px solid $mc-blue-400;
+        //background-color: rgba(0,0,0,.05);
+        box-shadow: 0px 1px 1px rgba(0,0,0,.04);
+    }
+}
